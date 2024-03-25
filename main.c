@@ -37,7 +37,7 @@ void vTaskListener( void * pvParameters )
         //char testpruts[10] = "test\n";
         //tud_cdc_n_write_str(0, testpruts);
         //gpio_put(PICO_DEFAULT_LED_PIN, !gpio_get(PICO_DEFAULT_LED_PIN));        
-        vTaskDelay(pdMS_TO_TICKS(10));         
+        //vTaskDelay(pdMS_TO_TICKS(10));         
     }
 }
 
@@ -56,7 +56,7 @@ void vTaskSender( void * pvParameters ) {
           gpio_set_mask(buf[0] & 255);          
         }
       }
-      vTaskDelay(pdMS_TO_TICKS(10));
+      vTaskDelay(10);
     }  
 }
 
@@ -89,7 +89,7 @@ void main()
   stdio_init_all();
   initgpios(); 
   
-  sleep_ms(2000);
+  //sleep_ms(2000);
   board_init();
 
   
